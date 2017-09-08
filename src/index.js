@@ -12,13 +12,19 @@ class App extends React.Component {
     super(props);
 
   this.state = {
-    selectedVideo: null,
-    term: 's2000'
+    selectedVideo: null
   };
 
-  YTSearch({key: YT_key, term: this.state.term}, (videos) => {
-      this.setState({selectedVideo: videos[0]});
-    })  
+  this.SearchYT('s2000')
+}
+
+
+
+
+  SearchYT(term){
+    YTSearch({key: YT_key, term: term}, (videos) => {
+      this.setState({selectedVideo: videos[0]})
+    }) 
   }
 
   render() {
