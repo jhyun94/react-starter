@@ -4,6 +4,7 @@ import YTSearch from 'youtube-api-search'
 
 import SearchBar from './components/search-bar';
 import VideoDetail from './components/video-detail';
+import VideoList from './components/video-list';
 
 const YT_key = 'AIzaSyDWgIFckPKsS74hGznX8HJpTh4cCVRwGGA'
 
@@ -12,7 +13,8 @@ class App extends React.Component {
     super(props);
 
   this.state = {
-    selectedVideo: null
+    selectedVideo: null,
+    videos: []
   };
 
   this.SearchYT('s2000')
@@ -24,6 +26,7 @@ class App extends React.Component {
   SearchYT(term){
     YTSearch({key: YT_key, term: term}, (videos) => {
       this.setState({selectedVideo: videos[0]})
+      this.setState({videos})
     }) 
   }
 
@@ -32,6 +35,7 @@ class App extends React.Component {
       <div>
         <SearchBar onNewSearchTerm={ (term) => this.SearchYT(term) } />
         <VideoDetail selectedVideo={this.state.selectedVideo} />
+        <VideoList />
       </div>
     )
   }
