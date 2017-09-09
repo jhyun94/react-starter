@@ -35,7 +35,9 @@ class App extends React.Component {
       <div>
         <SearchBar onNewSearchTerm={ (term) => this.SearchYT(term) } />
         <VideoDetail selectedVideo={this.state.selectedVideo} />
-        <VideoList videos={this.state.videos} />
+        <VideoList
+         videos={this.state.videos}
+         setVideo={ (video) => this.setState({selectedVideo: video}) } />
       </div>
     )
   }
