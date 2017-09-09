@@ -3,7 +3,7 @@ import React from 'react';
 const VideoListItem = () => {
 
   return (
-    <div>Video list Item </div>
+    <li>Video list Item </li>
   )
 }
 
