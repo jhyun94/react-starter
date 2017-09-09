@@ -2,9 +2,9 @@ import React from 'react';
 
 const VideoListItem = (props) => {
   return (
-    <li onClick={ () => props.setVideo(props.video)} >
+    <li onClick={ () => props.setVideo(props.video)} className="video-list-item">
       <img src={props.video.snippet.thumbnails.default.url} />
-      <p>{props.video.snippet.title}</p>
+      <h5>{props.video.snippet.title}</h5>
     </li>
   )
 }

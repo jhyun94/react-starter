@@ -34,10 +34,12 @@ class App extends React.Component {
     return (
       <div>
         <SearchBar onNewSearchTerm={ (term) => this.SearchYT(term) } />
-        <VideoDetail selectedVideo={this.state.selectedVideo} />
-        <VideoList
-         videos={this.state.videos}
-         setVideo={ (video) => this.setState({selectedVideo: video}) } />
+        <div className="row">
+          <VideoDetail selectedVideo={this.state.selectedVideo} />
+          <VideoList
+            videos={this.state.videos}
+            setVideo={ (video) => this.setState({selectedVideo: video}) } />
+          </div>
       </div>
     )
   }

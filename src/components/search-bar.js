@@ -9,7 +9,7 @@ class SearchBar extends React.Component{
   }
   render() {
     return (
-      <div><input
+      <div><input className="searchbar"
        onChange={ (event) => this.onInputChange(event.target.value) }/>
       </div>
     )

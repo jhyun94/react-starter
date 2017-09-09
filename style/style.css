@@ -1,0 +1,14 @@
+.searchbar {
+  display: block;
+  margin: 10px auto;
+}
+
+
+.video-list-item:hover {
+  background-color: #f6fafb;
+}
+
+.video-list-item {
+  list-style-type: none;
+  cursor: pointer;
+}
