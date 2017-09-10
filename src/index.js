@@ -1,12 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import YTSearch from 'youtube-api-search'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import YTSearch from 'youtube-api-search';
+import _ from 'lodash';
 
 import SearchBar from './components/search-bar';
 import VideoDetail from './components/video-detail';
 import VideoList from './components/video-list';
 
-const YT_key = 'AIzaSyDWgIFckPKsS74hGznX8HJpTh4cCVRwGGA'
+const YT_key = 'AIzaSyDWgIFckPKsS74hGznX8HJpTh4cCVRwGGA';
 
 class App extends React.Component {
   constructor(props){
@@ -30,7 +31,10 @@ class App extends React.Component {
     }) 
   }
 
+
   render() {
+
+    const SearchYT = _.debounce( term => {this.SearchYT(term)}, 300);
     return (
       <div>
         <SearchBar onNewSearchTerm={ (term) => this.SearchYT(term) } />
