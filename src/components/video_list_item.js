@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
 
-class VideoListItem extends Component {
-	constructor(props){
-		super(props)
+const VideoListItem = (props) => {
 
-	}
-
-	render(){
-		return (
-			<li>videoListItem</li>
-		)
-	}
+	return (
+		<div>test</div>
+	)
 }
 
 
