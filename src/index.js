@@ -8,7 +8,7 @@ import VideoList from './components/video_list';
 const  YT_API = 'AIzaSyDWgIFckPKsS74hGznX8HJpTh4cCVRwGGA';
 
 YTSearch({key: YT_API, term: 'surfboards'}, function(data){
-	console.log(data);
+	
 })
 
 
