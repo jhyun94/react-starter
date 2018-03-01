@@ -8,9 +8,7 @@ import VideoList from './components/video_list';
 import VideoDetail from './components/video_detail';
 const  YT_API = 'AIzaSyDWgIFckPKsS74hGznX8HJpTh4cCVRwGGA';
 
-YTSearch({key: YT_API, term: 'surfboards'}, function(data){
-	
-})
+
 
 
 class App extends Component {
@@ -30,10 +28,16 @@ class App extends Component {
 
 	}
 
+	videoSearch(term) {
+		YTSearch({key: YT_API, term: term}, (videos) => {
+			this.setState({videos});
+		})
+	}
+
 	render(){
 		return (
 			<div>
-				<SearchBar />
+				<SearchBar onVideoSearch={ (term) => this.videoSearch(term) }/>
 				<VideoDetail video={this.state.selectedVideo}/>
 				<VideoList 
 					videos={this.state.videos}
